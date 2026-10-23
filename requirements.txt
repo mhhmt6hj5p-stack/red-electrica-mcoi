@@ -1,0 +1,5 @@
+streamlit==1.66.0
+pyomo==6.10.1
+pandas==3.0.6
+altair==6.3.0
+reportlab==4.5.1
