@@ -13,6 +13,7 @@ carpeta = Path(tempfile.gettempdir()) / ('mcoi_consulta_' + firma)
 if not (carpeta / 'interfaz.py').exists():
     with zipfile.ZipFile(paquete) as archivo:
         archivo.extractall(carpeta)
-sys.path.insert(0, str(carpeta)) if str(carpeta) not in sys.path else None
+if str(carpeta) not in sys.path:
+    sys.path.insert(0, str(carpeta))
 os.chdir(carpeta)
 runpy.run_path(str(carpeta / 'interfaz.py'), run_name='__main__')
